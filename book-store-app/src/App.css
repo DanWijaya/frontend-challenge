@@ -115,6 +115,28 @@ button {
   content: '\2605';
 }
 
+.snackbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: beige;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.snackbar-close {
+  background-color: transparent;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
 
 /* Responsive Styles */
 @media screen and (max-width:768px) {

@@ -15,9 +15,6 @@ async function updateRecord(recordId, updatedData) {
     }),
   })
     .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-    })
     .catch((error) => {
       console.error(error);
     });
@@ -26,7 +23,13 @@ async function updateRecord(recordId, updatedData) {
 function StarRating(props) {
   const { originalRating, recordId } = props;
   const [rating, setRating] = useState(originalRating);
+  const [showSnackbar, setShowSnackbar] = useState(false);
+
   const [hover, setHover] = useState(0);
+
+  const handleSnackbarClose = () => {
+    setShowSnackbar(false);
+  };
 
   return (
     <div className="star-rating">
@@ -39,7 +42,9 @@ function StarRating(props) {
             className={index <= (hover || rating) ? "on" : "off"}
             onClick={() => {
               setRating(index);
-              updateRecord(recordId, { rating: index });
+              updateRecord(recordId, { rating: index }).then((result) => {
+                setShowSnackbar(true);
+              });
             }}
             onMouseEnter={() => setHover(index)}
             onMouseLeave={() => setHover(rating)}
@@ -48,6 +53,15 @@ function StarRating(props) {
           </button>
         );
       })}
+
+      {showSnackbar && (
+        <div className="snackbar">
+          Thank you for your rating!
+          <button className="snackbar-close" onClick={handleSnackbarClose}>
+            Close
+          </button>
+        </div>
+      )}
     </div>
   );
 }

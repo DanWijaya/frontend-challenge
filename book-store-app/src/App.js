@@ -5,6 +5,7 @@ import StarRating from "./StarRating";
 
 function App() {
   useEffect(() => {
+    // Method used to fetch data from the Book store api that is running on port 5000.
     const fetchData = async (resourcesType) => {
       const apiEndpoint = `http://localhost:5000/${resourcesType}`;
       const response = await fetch(apiEndpoint);
@@ -12,9 +13,9 @@ function App() {
       return JSONAPIResponseNormalizer(json);
     };
 
+    // Fetching all necessary data and update the react state
     fetchData("stores")
       .then((data) => {
-        console.log(data.stores);
         setStores(data.stores);
       })
       .catch((err) => console.error(err));
@@ -35,7 +36,6 @@ function App() {
         const countriesCode = Object.values(data.countries)
           .map((country) => country.code)
           .join(",");
-        console.log(countriesCode);
         return fetch(`https://restcountries.com/v3.1/alpha?codes=${countriesCode}`);
       })
       .then((result) => {
@@ -44,7 +44,6 @@ function App() {
       .then((result) => {
         let flags = {};
         result.forEach((country) => (flags[country.cca2] = country.flags.png));
-        // console.log(flags);
         setCountriesFlag(flags);
       })
       .catch((err) => console.error(err));
