@@ -12,8 +12,9 @@
   border-radius: 8px;
   min-height: 200px;
   width: 100%;
-  max-width: 750px;
+  max-width: 800px;
   background-color: white;
+  position: relative;
 }
 
 .store-name {
@@ -28,10 +29,10 @@
 
 .storeimage-md {
   border-radius: 50%;
-  height: 120px;
+  height: 150px;
   overflow:hidden;
   position: relative;
-  width: 120px;
+  width: 150px;
 }
 .storeimage-sm {
   display: none;
@@ -68,6 +69,9 @@ td, th {
   padding: 8px;
 }
 
+.emptycell {
+  min-width: 120px
+}
 .bookstore {
   margin-bottom : 10px
 }
@@ -83,8 +87,10 @@ td, th {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  position: absolute;
+  width: 95%;
+  bottom: 15px;
 }
-
 
 .store-flag .flag {
   max-width: 40px;
@@ -120,16 +126,24 @@ button {
     flex-direction: column;
   }
 
+  .store-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: static;
+    width: 100%;
+  }
+
   .div-storeimage-sm {
     display: flex;
     justify-content: center;
   }
   .storeimage-sm {
     border-radius: 50%;
-    height: 120px;
+    height: 200px;
     overflow: hidden;
     position: relative;
-    width: 120px;
+    width: 200px;
     margin-right: 20px;
     display: block;
   }

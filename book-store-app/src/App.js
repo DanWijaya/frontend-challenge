@@ -118,7 +118,7 @@ function App() {
                   ) : (
                     <tr>
                       <td>No Data Available</td>
-                      <td></td>
+                      <td className="emptycell"></td>
                     </tr>
                   )}
                   {top2BookSold != null ? (
