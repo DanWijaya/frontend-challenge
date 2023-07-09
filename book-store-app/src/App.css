@@ -1,0 +1,146 @@
+.App {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: beige;
+}
+
+.box {
+  margin: 10px;
+  padding: 20px;
+  border-style: solid;
+  border-radius: 8px;
+  min-height: 200px;
+  width: 100%;
+  max-width: 750px;
+  background-color: white;
+}
+
+.store-name {
+  font-weight: bold;
+}
+.store-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.storeimage-md {
+  border-radius: 50%;
+  height: 120px;
+  overflow:hidden;
+  position: relative;
+  width: 120px;
+}
+.storeimage-sm {
+  display: none;
+}
+
+.center {
+  position: relative;
+}
+
+.thumb {
+  position: absolute;
+
+}
+
+.bookstore {
+  flex-grow: 1;
+  margin-left: 20px;
+  max-width: 600px;
+}
+
+.flag {
+  max-width: 40px;
+  max-height: 40px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.bookstore {
+  margin-bottom : 10px
+}
+
+.store-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.store-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+
+.store-flag .flag {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.on {
+  color: #ffcc00;
+}
+.off {
+  color: #ccc;
+}
+
+.star {
+  font-size: 24px;
+  content: '\2605';
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width:768px) {
+  .box {
+    width: 100%;
+  }
+
+  .store-content {
+    flex-direction: column;
+  }
+
+  .div-storeimage-sm {
+    display: flex;
+    justify-content: center;
+  }
+  .storeimage-sm {
+    border-radius: 50%;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    width: 120px;
+    margin-right: 20px;
+    display: block;
+  }
+
+  .storeimage-md {
+    display: none;
+  }
+
+  .bookstore {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+}
